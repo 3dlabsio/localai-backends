@@ -1,7 +1,7 @@
 ---
 ## ExLlamaV2 with Speculative Decoding and SM_120 Support
 - &exllamav2-speculative
-  name: "exllamav2-speculative"
+  name: "cuda12-exllamav2-speculative"
   urls:
     - https://github.com/turboderp-org/exllamav2
     - https://github.com/3dlabsio/localai-backends
@@ -23,9 +23,4 @@
     - Automatic fallback to standard generation without draft model
     - Hardware-specific PyTorch installation (nightly for SM_120, stable for others)
     - Latest ExLlamaV2 commit with all improvements
-  alias: "exllamav2-speculative"
-  capabilities:
-    nvidia: "cuda12-exllamav2-speculative"
-- !!merge <<: *exllamav2-speculative
-  name: "cuda12-exllamav2-speculative"
   uri: "3dlabsio/localai-backends:exllamav2-speculative"
