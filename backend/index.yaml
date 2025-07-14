@@ -1,0 +1,31 @@
+---
+## ExLlamaV2 with Speculative Decoding and SM_120 Support
+- &exllamav2-speculative
+  name: "exllamav2-speculative"
+  urls:
+    - https://github.com/turboderp-org/exllamav2
+    - https://github.com/3dlabsio/localai-backends
+  tags:
+    - text-to-text
+    - LLM
+    - EXL2
+    - speculative-decoding
+    - SM_120
+    - Blackwell
+  license: MIT
+  description: |
+    ExLlamaV2 with speculative decoding support for 100%-200% performance improvements.
+    Includes automatic SM_120 (Blackwell) GPU detection and PyTorch nightly cu128 installation.
+    Supports RTX 5090, RTX 5080, RTX 5070, and RTX 6000 PRO GPUs.
+    
+    Features:
+    - Draft model support via draft_model configuration parameter
+    - Automatic fallback to standard generation without draft model
+    - Hardware-specific PyTorch installation (nightly for SM_120, stable for others)
+    - Latest ExLlamaV2 commit with all improvements
+  alias: "exllamav2-speculative"
+  capabilities:
+    nvidia: "cuda12-exllamav2-speculative"
+- !!merge <<: *exllamav2-speculative
+  name: "cuda12-exllamav2-speculative"
+  uri: "3dlabsio/localai-backends:exllamav2-speculative"
